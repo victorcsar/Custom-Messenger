@@ -15,12 +15,14 @@ export default function home() {
                 lg:px-8
                 bg-gray-100
             "
+            style={{backgroundImage: "url(/images/fundo.png)"}}
         >
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
                 <Image
                     alt="Logo"
                     height="48"
                     width="48"
+                    priority={true}
                     className="mx-auto w-auto"
                     src="/images/Simbolo_power_3.png"
                 />
@@ -31,10 +33,10 @@ export default function home() {
                         text-3xl
                         font-bold
                         trancking-tight
-                        text-gray-900
+                        text-green-500
                     "
                 >
-                    Faça login em sua conta
+                    Faça login na sua conta Power!
                 </h2>
             </div>
             <AuthForm/>

@@ -31,10 +31,10 @@ const Input: React.FC<InputProps> = ({
             <label 
                 className='
                    block
-                   text-sm
-                   font-medium
+                   text-sm                
                    leading-6
-                   text-gray-900
+                   text-green-600
+                   font-bold
                 '
                 htmlFor={id}
             >
