@@ -10,6 +10,7 @@ import Avatar from "@/app/components/Avatar";
 // import AvatarGroup from "@/app/components/AvatarGroup";
 
 import ProfileDrawer from "./ProfileDrawer";
+import AvatarGroup from "@/app/components/sidebar/AvatarGroup";
 // import useActiveList from "@/app/hooks/useActiveList";
 
 interface HeaderProps {
@@ -71,7 +72,12 @@ const Header: React.FC<HeaderProps> = ({
           >
             <HiChevronLeft size={32} />
           </Link>
+
+          {conversation.isGroup ? (
+            <AvatarGroup users={conversation.users}/>
+          ): ( 
             <Avatar user={otherUser} />
+          )}
 
           <div className="flex flex-col">
             <div>

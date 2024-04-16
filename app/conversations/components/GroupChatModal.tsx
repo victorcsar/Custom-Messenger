@@ -1,5 +1,6 @@
 "use client"
 
+import Button from "@/app/components/Button";
 import Input from "@/app/components/inputs/Input";
 import Select from "@/app/components/inputs/Select";
 import Modal from "@/app/components/Modal";
@@ -83,7 +84,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
                                 text-gray-600
                             "
                         >
-                            Crie um grupo com mais de 2 pessoas.
+                            Crie um grupo com mais de 2 pessoas e até 100 pessoas.
                         </p>
                         <div
                             className="
@@ -95,7 +96,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
                         >
                             <Input 
                                 register={register}
-                                label="Name"
+                                label="Nome do Grupo"
                                 id="name"
                                 disabled={isLoading}
                                 required
@@ -103,7 +104,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
                             />
                             <Select 
                                 disabled={isLoading}
-                                label="Members"
+                                label="Membros"
                                 options={users.map((user) => ({
                                     value: user.id,
                                     label: user.name
@@ -115,6 +116,30 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
                             />
                         </div>
                     </div>
+                </div>
+                <div
+                    className="
+                        mt-6
+                        flex
+                        items-center
+                        justify-end
+                        gap-x-6
+                    "
+                >
+                    <Button
+                        disabled={isLoading}
+                        onClick={onClose}
+                        type="button"
+                        secondary
+                    >
+                        Cancelar
+                    </Button>
+                    <Button
+                        disabled={isLoading}
+                        type="submit"
+                    >
+                        Criar Grupo
+                    </Button>
                 </div>
             </form>
         </Modal>
