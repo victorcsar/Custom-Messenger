@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Edit uploadPreset in app/conversation/[conversationId]/components/Form.tsx
 
+Edit uploadPreset in app/components/sidebar/SettingsModal.tsx
+
 ## Getting Started
 
 First, run the development server:
