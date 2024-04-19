@@ -122,11 +122,11 @@ const AuthForm = () =>{
                     onSubmit={handleSubmit(onSubmit)}
                 >
                     {variant === 'REGISTER' && (
-                        <Input id="name" label="Nome" register={register} errors={errors} disabled={isLoading}/>
+                        <Input id="name" label="Nome" register={register} errors={errors} disabled={isLoading} autoComplete = {false}/>
                     )}
-                    <Input id="email" label="Endereço de Email" type="email" register={register} errors={errors} disabled={isLoading}/>
+                    <Input id="email" label="Endereço de Email" type="email" register={register} errors={errors} disabled={isLoading} autoComplete = {true}/>
 
-                    <Input id="password" label="Senha" type="password" register={register} errors={errors} disabled={isLoading}/>
+                    <Input id="password" label="Senha" type="password" register={register} errors={errors} disabled={isLoading} autoComplete = {true}/>
 
                     <div>
                         <Button

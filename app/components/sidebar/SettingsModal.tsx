@@ -80,6 +80,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                                 errors={errors}
                                 required
                                 register={register}
+                                autoComplete = {false}
                             />
                             <div>
                                 <label className="

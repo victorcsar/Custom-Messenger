@@ -15,6 +15,7 @@ interface InputProps {
     register: UseFormRegister<FieldValues>,
     errors: FieldErrors,
     disabled?: boolean;
+    autoComplete?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -24,7 +25,8 @@ const Input: React.FC<InputProps> = ({
     required,
     register,
     errors,
-    disabled
+    disabled,
+    autoComplete
 }) =>{
     return(
         <div>
@@ -44,7 +46,7 @@ const Input: React.FC<InputProps> = ({
                 <input 
                     id={id}
                     type={type}
-                    autoComplete={"off"}
+                    autoComplete={autoComplete ? 'on' : 'off'}
                     disabled = {disabled}
                     {... register(id, {required})}
                     className={clsx(`
