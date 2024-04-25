@@ -53,15 +53,22 @@ const ConversationList: React.FC<ConversationListProps> = ({
         };
 
         const updateHandler = (conversation: FullConversationType) => {
-            setItems((current) => current.map((currentConversation) => {
-              if(currentConversation.id === conversation.id){
-                return {
-                    ... currentConversation,
-                    messages: conversation.messages
-                }
-              }
-              return currentConversation;
-            }))
+            setItems((current) => {
+                const updatedItems = current.map((currentConversation) => {
+                    if (currentConversation.id === conversation.id) {
+                        return {
+                            ...currentConversation,
+                            messages: conversation.messages,
+                            lastMessageAt: conversation.messages[0].createAt
+                        };
+                    }
+                    return currentConversation;
+                });
+
+                updatedItems.sort((a, b) => new Date(b.lastMessageAt).getTime() - new Date(a.lastMessageAt).getTime())
+                console.log(updatedItems)
+                return updatedItems
+            })
         }
 
         const removeHandler = (conversation: FullConversationType) => {
